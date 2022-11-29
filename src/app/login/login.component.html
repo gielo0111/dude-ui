@@ -1,0 +1,29 @@
+<div class='login-wrapper'>
+  <div *ngIf="!loading" class='login-body' >
+    <img class='login-logo' src='../../../assets/img/login.png' alt='Login'>
+    <h1>Login</h1>
+    <form (ngSubmit)="loginJWT()" [formGroup]='loginForm'>
+      <div class='form-floating mb-3'>
+        <input type='text' formControlName='username' class='form-control' placeholder='username'>
+        <label>UserName</label>
+        <span *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched" class='text-danger login-errorLabel'>
+          Invalid Username
+        </span>
+      </div>
+      <div class='form-floating mb-3'>
+        <input type='password' formControlName='password' class='form-control' placeholder='Password'>
+        <label>Password</label>
+        <span *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" class='text-danger login-errorLabel'>
+          Invalid Password
+        </span>
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-lg" [disabled]="loginForm.invalid" >Login</button>
+    </div>
+    </form>
+</div>
+<div *ngIf="loading" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+</div>
+

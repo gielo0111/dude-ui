@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    Reported Issues
+                </div>
+                <div class="card-body">
+                    <app-admin-form></app-admin-form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    Reported Issues
+                    <i class="bi bi-arrow-clockwise"  (click)="adminIssues.getIssues('1','5')"></i>
+                </div>
+                <div class="card-body">
+                    <app-admin-issues #adminIssues></app-admin-issues>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

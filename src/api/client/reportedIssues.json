@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1-abc",
+        "pageName": "Login Page",
+        "moduleName": "Authentication Module",
+        "description": "Cannot login, shows invalid username"
+    },
+    {
+        "id": "2-abc",
+        "pageName": "Signature Page",
+        "moduleName": "Policy Module",
+        "description": "Shows blank screen after saving signature"
+    },
+    {
+        "id": "3-abc",
+        "pageName": "Upload Document Page",
+        "moduleName": "Create Case Module",
+        "description": "Upload button does not work"
+    }
+]

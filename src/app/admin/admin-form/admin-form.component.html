@@ -1,0 +1,44 @@
+<main class="form-signin w-100 m-auto">
+    <form #form="ngForm">
+        <div class="mb-3">
+            <label for="pageName" class="form-label">Page Name</label>
+            <input type="text" class="form-control" id="pageName" name="pageName" [(ngModel)]="modalIssue.pageName">
+        </div>
+        <div class="mb-3">
+            <label for="moduleName" class="form-label">Module Name</label>
+            <input type="text" class="form-control" id="moduleName" name="moduleName" [(ngModel)]="modalIssue.moduleName">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="description">Description</label>
+            <textarea class="form-control" id="description" name="description" [(ngModel)]="modalIssue.description"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="serviceName">Service Name</label>
+          <textarea class="form-control" id="description" name="serviceName" [(ngModel)]="modalIssue.serviceName"></textarea>
+      </div>
+        <div class="mb-3">
+            <button type="button" class="btn btn-secondary btn-sm" (click)="clearFields()">Clear</button>
+            <button type="submit" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#clientFormModal" (click)="onSubmit(form)">Submit</button>
+        </div>
+    </form>
+  
+<!-- Modal -->
+<div class="modal" id="clientFormModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body ">
+            <h4 class="modal-title">{{modalTitle}}</h4>
+            <p>{{modalMessage}}</p>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</main>

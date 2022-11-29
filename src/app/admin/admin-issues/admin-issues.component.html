@@ -1,0 +1,74 @@
+<div class="list-group">
+  <a href="#" data-bs-toggle="modal" data-bs-target="#clientFormModal2" (click)="onSubmit(issue)"
+    class="list-group-item list-group-item-action" aria-current="true" *ngFor="let issue of issueList">
+    <div class="d-flex w-100 justify-content-between">
+      <p class="mb-1">{{issue.createdBy}} created report no. {{issue.incidentNo}}</p>
+      <small>{{issue.createdDate}}</small>
+    </div>
+  </a>
+</div>
+
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination" class="pagination justify-content-end">
+    <li class="page-item"><a class="page-link" (click)="previousPage()">Previous</a></li>
+    <li class="page-item" *ngFor="let i of [].constructor(totalPages) let index = index">
+      <a class="page-link" (click)="getIssues(index, '5')">{{index + 1}}</a>
+    </li>
+    <li class="page-item"><a class="page-link" (click)="nextPage()">Next</a></li>
+  </ul>
+</nav>
+
+
+<div class="modal" id="clientFormModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">{{modalIssue.incidentNo}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body ">
+        <div class="mb-3">
+          <label class="form-label">Service Name</label>
+          <input class="form-control" type="text" value="{{modalIssue.serviceName}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Exception</label>
+          <input class="form-control" type="text" value="{{modalIssue.exception}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Keywords</label>
+          <input class="form-control" type="text" value="{{modalIssue.keywords}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Module Name</label>
+          <input class="form-control" type="text" value="{{modalIssue.moduleName}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Page Name</label>
+          <input class="form-control" type="text" value="{{modalIssue.pageName}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Created Date</label>
+          <input class="form-control" type="text" value="{{modalIssue.createdDate}}" disabled readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Created By</label>
+          <input class="form-control" type="text" value="{{modalIssue.createdBy}}" disabled readonly>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

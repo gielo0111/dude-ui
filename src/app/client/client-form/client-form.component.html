@@ -1,0 +1,52 @@
+<main class="form-signin w-100 m-auto">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+          <div class="card-header">
+            <h1 class="h3 mb-3 fw-normal">Provide details of the issue encountered...</h1>
+          </div>
+          <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+              <div class="mb-3">
+                  <label for="pageName" class="form-label">Page Name</label>
+                  <input type="text" class="form-control" id="pageName" name="pageName" [(ngModel)]="newIssue.pageName" onfocus="this.value=''" required>
+                  <div [hidden]="newIssue.pageName === ''" class="alert alert-danger">Which page did you encounter the issue?</div>                 
+              </div>
+              <div class="mb-3">
+                  <label for="moduleName" class="form-label">Module Name</label>
+                  <input type="text" class="form-control" id="moduleName" name="moduleName" [(ngModel)]="newIssue.moduleName" onfocus="this.value=''" required>
+              </div>
+              <div class="mb-3">
+                  <label class="form-label" for="description">Description</label>
+                  <textarea class="form-control" id="description" name="description" [(ngModel)]="newIssue.description" onfocus="this.value=''" required></textarea>
+              </div>
+              <div class="mb-3">
+                  <button type="button" class="btn btn-primary" (click)="clearFields()">Clear</button>
+                  <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#clientFormModal">Submit</button>
+              </div>
+          </form>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal -->
+<div class="modal" id="clientFormModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body ">
+            <h4 class="modal-title">{{modalTitle}}</h4>
+            <p>{{modalMessage}}</p>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</main>
